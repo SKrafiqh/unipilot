@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { generateProjectIdea } from '../ai/mockAI';
+import { logActivity } from '../utils/activityLogger';
 
 export default function ProjectGenerator() {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function ProjectGenerator() {
         setLoading(true);
         setResult(null); // Clear previous result
 
-        import { logActivity } from '../utils/activityLogger';
+
 
         // ...
 
