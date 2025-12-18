@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   BASE STYLES
+   ========================= */
+@layer base {
+    body {
+        @apply antialiased transition-colors duration-200;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        /* Light Mode */
+        color: #1e293b;
+        /* slate-800 */
+        background-color: #f8fafc;
+        /* slate-50 */
+    }
+
+    /* Dark Mode */
+    :root[class~="dark"] body {
+        color: #f1f5f9;
+        /* slate-100 */
+        background-color: #0f172a;
+        /* slate-900 */
+    }
+
+    h1 {
+        @apply text-3xl font-bold tracking-tight;
+    }
+
+    h2 {
+        @apply text-2xl font-semibold tracking-tight;
+    }
+
+    h3 {
+        @apply text-xl font-semibold;
+    }
+
+    p {
+        @apply text-base leading-relaxed;
+        color: #475569;
+        /* slate-600 */
+    }
+
+    :root[class~="dark"] p {
+        color: #94a3b8;
+        /* slate-400 */
+    }
+}
+
+/* =========================
+   COMPONENT STYLES
+   ========================= */
+@layer components {
+
+    /* Page Wrapper for Transitions */
+    .page-wrapper {
+        @apply animate-fade-in;
+    }
+
+    /* Primary Button */
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-2.5 font-semibold transition-all duration-200 shadow-sm dark:shadow-none bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95 active:shadow-inner;
+    }
+
+    /* Secondary Button */
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-2.5 font-semibold transition-all duration-200 shadow-sm border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300 active:scale-95;
+    }
+
+    :root[class~="dark"] .btn-secondary {
+        @apply bg-slate-800 text-slate-200 border-slate-700 hover:bg-slate-700;
+    }
+
+    /* Card (Base) */
+    .card-base {
+        @apply rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-800 transition-all duration-300;
+    }
+
+    .card-hover {
+        @apply hover:shadow-lg hover:-translate-y-1 hover:border-indigo-100 dark:hover:border-indigo-900/50;
+    }
+
+    /* Input Fields */
+    .input-field {
+        @apply w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900/50 px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/30 transition-all outline-none;
+    }
+
+    /* Badge */
+    .badge {
+        @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-indigo-50 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300;
+    }
+}

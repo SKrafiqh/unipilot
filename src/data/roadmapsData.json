@@ -1,0 +1,133 @@
+[
+    {
+        "id": "aiml-intern",
+        "title": "AI/ML Internship Roadmap",
+        "description": "A comprehensive 6-month guide to mastering AI & ML for internships.",
+        "color": "#e3f2fd",
+        "weeks": [
+            {
+                "title": "Month 1: Python & Math Foundation",
+                "tasks": [
+                    "Master Python Syntax (Lists, Dicts, Classes)",
+                    "NumPy & Pandas for Data Manipulation",
+                    "Linear Algebra & Probability Basics",
+                    "Calculus refresher (Derivatives, Gradients)"
+                ]
+            },
+            {
+                "title": "Month 2: Machine Learning Types",
+                "tasks": [
+                    "Supervised vs Unsupervised Learning",
+                    "Regression & Classification Algorithms",
+                    "Scikit-Learn library implementation",
+                    "Model Evaluation Metrics (Accuracy, Precision, Recall)"
+                ]
+            },
+            {
+                "title": "Month 3: Deep Learning Basics",
+                "tasks": [
+                    "Neural Networks Architecture",
+                    "Backpropagation & Activation Functions",
+                    "Introduction to TensorFlow / PyTorch",
+                    "Building a simple Image Classifier"
+                ]
+            },
+            {
+                "title": "Months 4-6: Projects & Deployment",
+                "tasks": [
+                    "Advanced NLP or CV Project",
+                    "Model Deployment using Flask/FastAPI",
+                    "Portfolio Building",
+                    "Mock Interviews"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "webdev-intern",
+        "title": "Web Development Internship",
+        "description": "8-week intensive path to become a junior web developer.",
+        "color": "#fff3e0",
+        "weeks": [
+            {
+                "title": "Weeks 1-2: Frontend Basics",
+                "tasks": [
+                    "HTML5 Semantic Structure",
+                    "CSS3 Flexbox & Grid Systems",
+                    "JavaScript Essentials (ES6+)",
+                    "Responsive Design Principles"
+                ]
+            },
+            {
+                "title": "Weeks 3-4: React Framework",
+                "tasks": [
+                    "Components, Props & State",
+                    "React Hooks (useState, useEffect)",
+                    "Fetching API Data",
+                    "Single Page App Routing"
+                ]
+            },
+            {
+                "title": "Weeks 5-6: Backend Integration",
+                "tasks": [
+                    "Node.js & Express Basics",
+                    "REST API Concepts",
+                    "Connecting to a Database (dMongoDB/SQL)",
+                    "Authentication Basics"
+                ]
+            },
+            {
+                "title": "Weeks 7-8: Capstone Project",
+                "tasks": [
+                    "Build a Full Stack Application",
+                    "Deploy to Vercel/Netlify",
+                    "Code Review & Refactoring"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "dbms-prep",
+        "title": "DBMS Exam Prep",
+        "description": "4-week study plan to ace your Database Management Systems exam.",
+        "color": "#e8f5e9",
+        "weeks": [
+            {
+                "title": "Week 1: Fundamentals & ER Models",
+                "tasks": [
+                    "Database Architecture (3-tier)",
+                    "Data Independence",
+                    "ER Diagrams & Notation",
+                    "Strong vs Weak Entities"
+                ]
+            },
+            {
+                "title": "Week 2: Relational Model & SQL",
+                "tasks": [
+                    "Relational Algebra Operations",
+                    "SQL DDL & DML Commands",
+                    "Joins & Subqueries",
+                    "Views and Indexes"
+                ]
+            },
+            {
+                "title": "Week 3: Normalization",
+                "tasks": [
+                    "Functional Dependencies",
+                    "Normal Forms (1NF, 2NF, 3NF, BCNF)",
+                    "Lossless Join Decomposition",
+                    "Dependency Preservation"
+                ]
+            },
+            {
+                "title": "Week 4: Transactions & Concurrency",
+                "tasks": [
+                    "ACID Properties",
+                    "Transaction Logs & Recovery",
+                    "Concurrency Control Protocols",
+                    "Previous Year Question Papers"
+                ]
+            }
+        ]
+    }
+]

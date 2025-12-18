@@ -1,0 +1,116 @@
+[
+    {
+        "id": "dbms",
+        "category": "Database Management Systems",
+        "description": "SQL and NoSQL based projects focusing on schema design and optimization.",
+        "color": "#e3f2fd",
+        "projects": [
+            {
+                "id": "library-management",
+                "title": "University Library Management System",
+                "difficulty": "Easy",
+                "techStack": [
+                    "SQL",
+                    "Java/Python",
+                    "JDBC/ODBC"
+                ],
+                "problemStatement": "Design a system to manage books, student memberships, and borrowing records for a university library.",
+                "features": [
+                    "Admin and Student login modules",
+                    "Book search by Title, Author, or Category",
+                    "Issue and Return book functionality with fine calculation",
+                    "Dashboard for Librarians to see overdue books"
+                ],
+                "submissionGuidelines": "Submit the ER Diagram, Relational Schema, and the SQL dump file along with the source code."
+            },
+            {
+                "id": "e-commerce-inventory",
+                "title": "E-Commerce Inventory System",
+                "difficulty": "Medium",
+                "techStack": [
+                    "PostgreSQL",
+                    "Node.js",
+                    "Express"
+                ],
+                "problemStatement": "Create a database backend for an online store handling products, orders, customers, and payments.",
+                "features": [
+                    "Complex queries for sales reports",
+                    "Transaction management for order processing",
+                    "Inventory triggers for low stock alerts",
+                    "Stored procedures for invoice generation"
+                ],
+                "submissionGuidelines": "Provide API documentation and a video demo of transaction handling."
+            }
+        ]
+    },
+    {
+        "id": "aiml",
+        "category": "Artificial Intelligence & ML",
+        "description": "Projects dealing with data analysis, predictive modeling, and neural networks.",
+        "color": "#f3e5f5",
+        "projects": [
+            {
+                "id": "house-price-prediction",
+                "title": "House Price Prediction",
+                "difficulty": "Easy",
+                "techStack": [
+                    "Python",
+                    "Pandas",
+                    "Scikit-Learn"
+                ],
+                "problemStatement": "Build a regression model to predict house prices based on features like area, location, and number of rooms.",
+                "features": [
+                    "Data cleaning and preprocessing",
+                    "Exploratory Data Analysis (EDA) visualization",
+                    "Linear Regression model implementation",
+                    "R-squared and RMSE evaluation"
+                ],
+                "submissionGuidelines": "Submit the Jupyter Notebook with comments explaining each step."
+            },
+            {
+                "id": "spam-classifier",
+                "title": "Email Spam Classifier",
+                "difficulty": "Medium",
+                "techStack": [
+                    "Python",
+                    "NLTK",
+                    "Naive Bayes"
+                ],
+                "problemStatement": "Develop an NLP-based text classifier to distinguish between spam and ham emails.",
+                "features": [
+                    "Text tokenization and strict preprocessing",
+                    "TF-IDF or Bag of Words vectorization",
+                    "Model comparison (Naive Bayes vs SVM)",
+                    "Web interface for testing custom messages"
+                ],
+                "submissionGuidelines": "Deploy using Streamlit and submit the live link."
+            }
+        ]
+    },
+    {
+        "id": "webdev",
+        "category": "Web Development",
+        "description": "Full-stack and frontend applications using modern web technologies.",
+        "color": "#fff3e0",
+        "projects": [
+            {
+                "id": "task-manager",
+                "title": "Collaborative Task Manager",
+                "difficulty": "Medium",
+                "techStack": [
+                    "React",
+                    "Firebase",
+                    "Tailwind CSS"
+                ],
+                "problemStatement": "Build a Trello-like Kanban board application for teams to manage tasks in real-time.",
+                "features": [
+                    "Drag and drop interface for tasks",
+                    "Real-time updates using Firestore/Socket.io",
+                    "Team member assignment",
+                    "Auth integration"
+                ],
+                "submissionGuidelines": "Host on Vercel/Netlify and provide the GitHub repository link."
+            }
+        ]
+    }
+]
