@@ -174,6 +174,32 @@ export default function Dashboard() {
                         </div>
                     </div>
 
+                    {/* AI Doubt Solver Card */}
+                    <div className="card-base card-hover group relative overflow-hidden cursor-pointer" onClick={() => navigate('/ai-doubt')}>
+                        <div className="h-2 w-full bg-orange-500 absolute top-0 left-0"></div>
+                        <div className="p-6 pt-8">
+                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform duration-300">
+                                <AIIcon className="w-6 h-6" />
+                            </div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                                    AI Doubt Solver
+                                </h3>
+                                <span className="rounded-full bg-orange-100 dark:bg-orange-900 text-xs font-bold text-orange-700 dark:text-orange-300 px-2 py-0.5 animate-pulse">
+                                    BETA
+                                </span>
+                            </div>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
+                                Stuck on a concept? Get instant AI-powered explanations for your doubts.
+                            </p>
+                            <span
+                                className="w-full inline-block text-center rounded-lg bg-orange-50 dark:bg-orange-900/20 py-2.5 text-sm font-semibold text-orange-600 dark:text-orange-300 group-hover:bg-orange-100 dark:group-hover:bg-orange-900/40 transition-colors"
+                            >
+                                Solve My Doubt
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
 
                 {/* Bottom Section: Progress / Quick Stats */}
