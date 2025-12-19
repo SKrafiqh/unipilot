@@ -1,233 +1,170 @@
 /**
- * Vercel Serverless Function: AI Notes Generator
- * 
- * This endpoint handles AI-powered note generation using Google Gemini.
- * It includes rate limiting, input validation, and secure API key handling.
+ * Vercel Serverless Function: AI Notes Generator (OpenAI)
  */
 
-// In-memory rate limiting (resets on cold start, suitable for demo)
 const rateLimitStore = new Map();
 
-const DEMO_LIMIT = 2;
-const LOGGED_IN_LIMIT = 10;
-const RATE_LIMIT_WINDOW_MS = 24 * 60 * 60 * 1000; // 24 hours
+const DEMO_LIMIT = 10;
+const LOGGED_IN_LIMIT = 35;
+const RATE_LIMIT_WINDOW_MS = 24 * 60 * 60 * 1000;
 
-/**
- * Check and update rate limit for a user
- */
+/* ---------------- RATE LIMIT ---------------- */
 function checkRateLimit(identifier, isLoggedIn) {
     const limit = isLoggedIn ? LOGGED_IN_LIMIT : DEMO_LIMIT;
     const now = Date.now();
 
-    const userRecord = rateLimitStore.get(identifier);
+    const record = rateLimitStore.get(identifier);
 
-    if (!userRecord || (now - userRecord.windowStart) > RATE_LIMIT_WINDOW_MS) {
-        // New window
+    if (!record || now - record.windowStart > RATE_LIMIT_WINDOW_MS) {
         rateLimitStore.set(identifier, { count: 1, windowStart: now });
         return { allowed: true, remaining: limit - 1 };
     }
 
-    if (userRecord.count >= limit) {
+    if (record.count >= limit) {
         return { allowed: false, remaining: 0 };
     }
 
-    userRecord.count += 1;
-    rateLimitStore.set(identifier, userRecord);
-    return { allowed: true, remaining: limit - userRecord.count };
+    record.count += 1;
+    return { allowed: true, remaining: limit - record.count };
 }
 
-/**
- * Build the AI prompt for note generation
- */
+/* ---------------- PROMPT ---------------- */
 function buildPrompt(subject, unit, topic, difficulty) {
-    return `You are an expert university professor specializing in ${subject}.
-Generate detailed, exam-oriented engineering notes for students.
+    return `
+You are an expert university professor.
+
+Generate detailed, exam-oriented engineering notes.
 
 Subject: ${subject}
 Unit: ${unit}
 Topic: ${topic}
-Difficulty Level: ${difficulty}
+Difficulty: ${difficulty}
 
 Requirements:
-- Clear, concise explanations suitable for ${difficulty} level students
-- Use bullet points and structured headings
-- Include real-world examples and applications
-- Provide diagram descriptions (text-only, no actual images)
-- Focus on exam-relevant points and potential questions
-- Structure like a professional textbook
+- Clear explanations
+- Bullet points & headings
+- Real-world examples
+- Diagram descriptions (text only)
+- Exam-focused points
+- Structured like a textbook
 
-Output your response in the following JSON format ONLY (no markdown code blocks):
+Return output in JSON ONLY:
+
 {
-  "introduction": "Brief introduction to the topic...",
-  "explanation": "Detailed explanation with key concepts...",
-  "examples": "Real-world examples and case studies...",
-  "diagramDescription": "Text description of relevant diagrams...",
-  "examPoints": "Key exam points, tips, and potential questions..."
+  "introduction": "",
+  "explanation": "",
+  "examples": "",
+  "diagramDescription": "",
+  "examPoints": ""
+}
+`;
 }
 
-Ensure each section is comprehensive and helpful for exam preparation.`;
-}
-
-/**
- * Call Google Gemini API
- */
-async function callGeminiAPI(prompt, apiKey) {
-    const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                contents: [
-                    {
-                        parts: [{ text: prompt }]
-                    }
-                ],
-                generationConfig: {
-                    temperature: 0.7,
-                    maxOutputTokens: 2048,
-                }
-            })
-        }
-    );
+/* ---------------- OPENAI CALL ---------------- */
+async function callOpenAI(prompt, apiKey) {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [
+                { role: "system", content: "You are a helpful professor." },
+                { role: "user", content: prompt },
+            ],
+            temperature: 0.7,
+            max_tokens: 1800,
+        }),
+    });
 
     if (!response.ok) {
-        const error = await response.text();
-        throw new Error(`Gemini API error: ${response.status} - ${error}`);
+        const err = await response.text();
+        throw new Error(`OpenAI error ${response.status}: ${err}`);
     }
 
     const data = await response.json();
-
-    if (!data.candidates || !data.candidates[0]?.content?.parts?.[0]?.text) {
-        throw new Error('Invalid response structure from Gemini API');
-    }
-
-    return data.candidates[0].content.parts[0].text;
+    return data.choices[0].message.content;
 }
 
-/**
- * Parse AI response into structured notes
- */
-function parseAIResponse(responseText) {
+/* ---------------- PARSE RESPONSE ---------------- */
+function parseAIResponse(text) {
     try {
-        // Try to extract JSON from the response
-        let jsonStr = responseText.trim();
-
-        // Remove markdown code blocks if present
-        if (jsonStr.startsWith('```json')) {
-            jsonStr = jsonStr.slice(7);
-        }
-        if (jsonStr.startsWith('```')) {
-            jsonStr = jsonStr.slice(3);
-        }
-        if (jsonStr.endsWith('```')) {
-            jsonStr = jsonStr.slice(0, -3);
-        }
-
-        const parsed = JSON.parse(jsonStr.trim());
+        const cleaned = text.replace(/```json|```/g, "").trim();
+        const parsed = JSON.parse(cleaned);
 
         return {
-            introduction: parsed.introduction || 'Introduction not available.',
-            explanation: parsed.explanation || 'Explanation not available.',
-            examples: parsed.examples || 'Examples not available.',
-            diagramDescription: parsed.diagramDescription || 'Diagram description not available.',
-            examPoints: parsed.examPoints || 'Exam points not available.',
+            introduction: parsed.introduction || "",
+            explanation: parsed.explanation || "",
+            examples: parsed.examples || "",
+            diagramDescription: parsed.diagramDescription || "",
+            examPoints: parsed.examPoints || "",
         };
-    } catch (error) {
-        // If JSON parsing fails, try to extract sections manually
-        console.error('JSON parse error, attempting manual extraction:', error.message);
-
+    } catch (err) {
         return {
-            introduction: responseText.substring(0, 500),
-            explanation: responseText,
-            examples: 'See explanation above.',
-            diagramDescription: 'Diagram description included in explanation.',
-            examPoints: 'Key points included in explanation.',
+            introduction: "Introduction unavailable.",
+            explanation: text,
+            examples: "See explanation.",
+            diagramDescription: "See explanation.",
+            examPoints: "See explanation.",
         };
     }
 }
 
-/**
- * Main handler for the serverless function
- */
+/* ---------------- HANDLER ---------------- */
 export default async function handler(req, res) {
-    // CORS headers
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
-    }
-
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
+    if (req.method === "OPTIONS") return res.status(200).end();
+    if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
     try {
         const { subject, unit, topic, difficulty, userId, isLoggedIn } = req.body;
 
-        // Input validation
         if (!subject || !unit || !topic || !difficulty) {
-            return res.status(400).json({
-                error: 'Missing required fields',
-                message: 'Please provide subject, unit, topic, and difficulty.'
-            });
+            return res.status(400).json({ error: "Missing required fields" });
         }
 
-        if (topic.length > 200) {
-            return res.status(400).json({
-                error: 'Topic too long',
-                message: 'Topic must be less than 200 characters.'
-            });
-        }
+        const identifier = userId || req.headers["x-forwarded-for"] || "demo-user";
+        const rate = checkRateLimit(identifier, isLoggedIn === true);
 
-        // Rate limiting
-        const identifier = userId || req.headers['x-forwarded-for'] || 'anonymous';
-        const rateCheck = checkRateLimit(identifier, isLoggedIn === true);
-
-        if (!rateCheck.allowed) {
+        if (!rate.allowed) {
             return res.status(429).json({
-                error: 'Rate limit exceeded',
+                error: "Rate limit exceeded",
                 message: isLoggedIn
-                    ? 'You have reached your daily limit. Please try again tomorrow.'
-                    : 'Demo limit reached (2/day). Login for more generations!',
-                isRateLimited: true
+                    ? "Daily limit reached."
+                    : "Demo limit reached. Login for more.",
+                isRateLimited: true,
             });
         }
 
-        // Check for API key
-        const apiKey = process.env.GEMINI_API_KEY;
+        const apiKey = process.env.OPENAI_API_KEY;
         if (!apiKey) {
-            console.error('GEMINI_API_KEY not configured');
             return res.status(503).json({
-                error: 'AI service unavailable',
-                message: 'AI service is temporarily unavailable. Please try again later.',
-                useDemoMode: true
+                error: "AI unavailable",
+                useDemoMode: true,
             });
         }
 
-        // Build prompt and call AI
         const prompt = buildPrompt(subject, unit, topic, difficulty);
-        const aiResponse = await callGeminiAPI(prompt, apiKey);
-        const notes = parseAIResponse(aiResponse);
+        const aiText = await callOpenAI(prompt, apiKey);
+        const notes = parseAIResponse(aiText);
 
         return res.status(200).json({
             success: true,
             notes,
-            remaining: rateCheck.remaining,
-            source: 'ai'
+            remaining: rate.remaining,
+            source: "openai",
         });
 
-    } catch (error) {
-        console.error('AI generation error:', error);
-
+    } catch (err) {
+        console.error("AI ERROR:", err);
         return res.status(500).json({
-            error: 'Generation failed',
-            message: 'Failed to generate notes. Please try again.',
-            useDemoMode: true
+            error: "AI generation failed",
+            useDemoMode: true,
         });
     }
 }
