@@ -149,7 +149,7 @@ export default function Dashboard() {
                     </div>
 
                     {/* AI Tools Card */}
-                    <div className="card-base card-hover group relative overflow-hidden cursor-pointer" onClick={() => navigate('/generator')}>
+                    <div className="card-base card-hover group relative overflow-hidden cursor-pointer" onClick={() => navigate('/ai-notes')}>
                         <div className="h-2 w-full bg-emerald-500 absolute top-0 left-0"></div>
                         <div className="p-6 pt-8">
                             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform duration-300">
@@ -157,19 +157,19 @@ export default function Dashboard() {
                             </div>
                             <div className="flex items-center gap-2 mb-2">
                                 <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                                    AI Generator
+                                    AI Notes Gen
                                 </h3>
                                 <span className="rounded-full bg-emerald-100 dark:bg-emerald-900 text-xs font-bold text-emerald-700 dark:text-emerald-300 px-2 py-0.5 animate-pulse">
                                     BETA
                                 </span>
                             </div>
                             <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
-                                Stuck? Generate personalized project ideas instantly with AI.
+                                Generate detailed, exam-oriented engineering notes instantly with AI.
                             </p>
                             <span
                                 className="w-full inline-block text-center rounded-lg bg-emerald-50 dark:bg-emerald-900/20 py-2.5 text-sm font-semibold text-emerald-600 dark:text-emerald-300 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/40 transition-colors"
                             >
-                                Try AI Beta
+                                Generate AI Notes
                             </span>
                         </div>
                     </div>

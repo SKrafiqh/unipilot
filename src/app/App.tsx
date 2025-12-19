@@ -9,6 +9,7 @@ import RoadmapDetail from '../pages/RoadmapDetail';
 import ProjectCategoryList from '../pages/ProjectCategoryList';
 import ProjectList from '../pages/ProjectList';
 import ProjectDetail from '../pages/ProjectDetail';
+import AiNotes from '../pages/AiNotes';
 import LandingPage from '../pages/LandingPage';
 
 // Legacy components import (removed to avoid conflict)
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/verify" element={<Verify />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/ai-notes" element={<AiNotes />} />
 
         {/* Notes Module Routes */}
         <Route path="/notes" element={<NotesList />} />
