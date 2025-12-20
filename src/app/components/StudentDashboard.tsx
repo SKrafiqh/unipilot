@@ -1,14 +1,18 @@
+
+<div className="mb-6 rounded-lg bg-red-600 text-white p-4 text-center font-bold">
+  🚀 NEW DASHBOARD VERSION – CACHE CLEARED
+</div>
 import { useState } from "react";
-import { 
-  BookOpen, 
-  Briefcase, 
-  Brain, 
-  GraduationCap, 
-  LayoutDashboard, 
-  MapPin, 
-  FolderKanban, 
-  User, 
-  Bell, 
+import {
+  BookOpen,
+  Briefcase,
+  Brain,
+  GraduationCap,
+  LayoutDashboard,
+  MapPin,
+  FolderKanban,
+  User,
+  Bell,
   Search,
   TrendingUp,
   Clock,
@@ -60,25 +64,25 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
   ];
 
   const aiRecommendations = [
-    { 
+    {
       type: 'note',
-      title: 'Advanced Graph Algorithms', 
+      title: 'Advanced Graph Algorithms',
       subject: 'Data Structures',
       reason: 'Based on your DSA progress',
       icon: FileText,
       color: 'text-blue-600 bg-blue-50'
     },
-    { 
+    {
       type: 'roadmap',
-      title: 'Full Stack Developer Path', 
+      title: 'Full Stack Developer Path',
       subject: 'Career',
       reason: 'Matches your interests',
       icon: Target,
       color: 'text-purple-600 bg-purple-50'
     },
-    { 
+    {
       type: 'internship',
-      title: 'Frontend Intern at Startup', 
+      title: 'Frontend Intern at Startup',
       subject: 'Opportunity',
       reason: 'Skills match: React, TypeScript',
       icon: Briefcase,
@@ -112,7 +116,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                 UniPilot
               </span>
             </div>
-            <button 
+            <button
               onClick={() => setSidebarOpen(false)}
               className="lg:hidden hover:bg-gray-100 p-2 rounded-lg transition-colors"
             >
@@ -129,11 +133,10 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item)}
-                className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl font-medium transition-all ${
-                  isActive 
-                    ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg shadow-blue-500/30' 
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
+                className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl font-medium transition-all ${isActive
+                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg shadow-blue-500/30'
+                  : 'text-gray-700 hover:bg-gray-50'
+                  }`}
               >
                 <Icon className="w-5 h-5" />
                 <span>{item.label}</span>
@@ -168,7 +171,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
           <div className="px-6 lg:px-8 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <button 
+                <button
                   onClick={() => setSidebarOpen(true)}
                   className="lg:hidden hover:bg-gray-100 p-2 rounded-lg transition-colors"
                 >
@@ -176,8 +179,8 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                 </button>
                 <div className="relative w-96 max-w-full">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input 
-                    placeholder="Search notes, projects, roadmaps..." 
+                  <Input
+                    placeholder="Search notes, projects, roadmaps..."
                     className="pl-11 bg-gray-50 border-gray-200 focus:bg-white transition-colors"
                   />
                 </div>
@@ -371,32 +374,32 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
           <Card className="p-6">
             <h2 className="text-xl font-bold mb-6">Quick Actions</h2>
             <div className="grid md:grid-cols-4 gap-4">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="h-auto py-6 flex-col gap-2 hover:bg-blue-50 hover:border-blue-300"
                 onClick={() => onNavigate('notes')}
               >
                 <BookOpen className="w-6 h-6 text-blue-600" />
                 <span>Browse Notes</span>
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="h-auto py-6 flex-col gap-2 hover:bg-green-50 hover:border-green-300"
                 onClick={() => onNavigate('projects')}
               >
                 <FolderKanban className="w-6 h-6 text-green-600" />
                 <span>Submit Project</span>
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="h-auto py-6 flex-col gap-2 hover:bg-purple-50 hover:border-purple-300"
                 onClick={() => onNavigate('roadmaps')}
               >
                 <MapPin className="w-6 h-6 text-purple-600" />
                 <span>View Roadmaps</span>
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="h-auto py-6 flex-col gap-2 hover:bg-orange-50 hover:border-orange-300"
                 onClick={() => onNavigate('ai-assistant')}
               >
@@ -410,7 +413,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
 
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         ></div>
