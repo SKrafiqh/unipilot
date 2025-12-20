@@ -1,9 +1,389 @@
 [
     {
+        "id": "software-engineer",
+        "title": "Software Engineer Career Path",
+        "description": "Complete roadmap to become a professional Software Engineer at top tech companies.",
+        "color": "#e3f2fd",
+        "timeEstimate": "12 months",
+        "salaryRange": {
+            "india": "6-25 LPA",
+            "global": "$80K-$200K"
+        },
+        "weeks": [
+            {
+                "title": "Month 1-2: Programming Fundamentals",
+                "tasks": [
+                    "Master one language deeply (Python/Java/C++)",
+                    "Object-Oriented Programming concepts",
+                    "Version Control with Git & GitHub",
+                    "Linux/Unix command line basics"
+                ]
+            },
+            {
+                "title": "Month 3-4: Data Structures",
+                "tasks": [
+                    "Arrays, Strings, Linked Lists",
+                    "Stacks, Queues, Hash Tables",
+                    "Trees (Binary, BST, AVL)",
+                    "Graphs basics (BFS, DFS)"
+                ]
+            },
+            {
+                "title": "Month 5-6: Algorithms",
+                "tasks": [
+                    "Sorting & Searching algorithms",
+                    "Dynamic Programming patterns",
+                    "Graph algorithms (Dijkstra, MST)",
+                    "Practice 100+ LeetCode problems"
+                ]
+            },
+            {
+                "title": "Month 7-8: System Design Basics",
+                "tasks": [
+                    "Database design (SQL/NoSQL)",
+                    "API design & REST principles",
+                    "Caching strategies",
+                    "Load balancing concepts"
+                ]
+            },
+            {
+                "title": "Month 9-10: Projects & Portfolio",
+                "tasks": [
+                    "Build 2-3 full-stack projects",
+                    "Contribute to open source",
+                    "Write technical blog posts",
+                    "Create GitHub portfolio"
+                ]
+            },
+            {
+                "title": "Month 11-12: Interview Prep",
+                "tasks": [
+                    "Mock interviews on Pramp/Interviewing.io",
+                    "Behavioral question preparation (STAR method)",
+                    "Company-specific preparation",
+                    "Salary negotiation tips"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fullstack-developer",
+        "title": "Full Stack Developer",
+        "description": "8-month intensive path to become a job-ready Full Stack Developer.",
+        "color": "#fff3e0",
+        "timeEstimate": "8 months",
+        "salaryRange": {
+            "india": "5-18 LPA",
+            "global": "$60K-$150K"
+        },
+        "weeks": [
+            {
+                "title": "Month 1: Frontend Foundations",
+                "tasks": [
+                    "HTML5 semantic elements & accessibility",
+                    "CSS3 Flexbox, Grid, animations",
+                    "JavaScript ES6+ features",
+                    "Responsive design & mobile-first"
+                ]
+            },
+            {
+                "title": "Month 2: React/Vue Framework",
+                "tasks": [
+                    "Component-based architecture",
+                    "State management (Redux/Zustand)",
+                    "React Hooks mastery",
+                    "Build 3 frontend projects"
+                ]
+            },
+            {
+                "title": "Month 3: Backend with Node.js",
+                "tasks": [
+                    "Node.js & Express.js fundamentals",
+                    "RESTful API design",
+                    "Authentication (JWT, OAuth)",
+                    "Error handling & validation"
+                ]
+            },
+            {
+                "title": "Month 4: Databases",
+                "tasks": [
+                    "SQL with PostgreSQL/MySQL",
+                    "NoSQL with MongoDB",
+                    "ORM usage (Prisma/Mongoose)",
+                    "Database optimization"
+                ]
+            },
+            {
+                "title": "Month 5-6: Advanced Topics",
+                "tasks": [
+                    "TypeScript for type safety",
+                    "Testing (Jest, Cypress)",
+                    "CI/CD pipelines",
+                    "Docker basics"
+                ]
+            },
+            {
+                "title": "Month 7-8: Capstone & Job Hunt",
+                "tasks": [
+                    "Build full-stack SaaS project",
+                    "Deploy to Vercel/AWS",
+                    "Portfolio website",
+                    "Interview preparation"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "data-scientist",
+        "title": "Data Scientist Path",
+        "description": "10-month roadmap to become a Data Scientist with ML expertise.",
+        "color": "#f3e5f5",
+        "timeEstimate": "10 months",
+        "salaryRange": {
+            "india": "8-30 LPA",
+            "global": "$90K-$180K"
+        },
+        "weeks": [
+            {
+                "title": "Month 1-2: Python & Math Foundations",
+                "tasks": [
+                    "Python for Data Science",
+                    "NumPy, Pandas mastery",
+                    "Linear Algebra essentials",
+                    "Statistics & Probability"
+                ]
+            },
+            {
+                "title": "Month 3: Data Analysis & Visualization",
+                "tasks": [
+                    "Exploratory Data Analysis (EDA)",
+                    "Matplotlib, Seaborn, Plotly",
+                    "SQL for data querying",
+                    "Data cleaning techniques"
+                ]
+            },
+            {
+                "title": "Month 4-5: Machine Learning",
+                "tasks": [
+                    "Supervised Learning algorithms",
+                    "Unsupervised Learning (clustering)",
+                    "Scikit-learn implementation",
+                    "Model evaluation & tuning"
+                ]
+            },
+            {
+                "title": "Month 6-7: Deep Learning",
+                "tasks": [
+                    "Neural Networks fundamentals",
+                    "TensorFlow/PyTorch",
+                    "CNNs for Computer Vision",
+                    "RNNs/LSTMs for sequences"
+                ]
+            },
+            {
+                "title": "Month 8: NLP & Specialization",
+                "tasks": [
+                    "Text preprocessing",
+                    "Transformers & BERT",
+                    "Hugging Face library",
+                    "Choose: CV, NLP, or Time Series"
+                ]
+            },
+            {
+                "title": "Month 9-10: Projects & Deployment",
+                "tasks": [
+                    "Kaggle competitions",
+                    "End-to-end ML pipeline",
+                    "Model deployment (FastAPI/Flask)",
+                    "MLOps basics"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "devops-engineer",
+        "title": "DevOps Engineer Path",
+        "description": "8-month roadmap to master DevOps practices and tools.",
+        "color": "#e8f5e9",
+        "timeEstimate": "8 months",
+        "salaryRange": {
+            "india": "7-25 LPA",
+            "global": "$85K-$170K"
+        },
+        "weeks": [
+            {
+                "title": "Month 1: Linux & Scripting",
+                "tasks": [
+                    "Linux system administration",
+                    "Bash scripting",
+                    "Python for automation",
+                    "Networking basics"
+                ]
+            },
+            {
+                "title": "Month 2: Version Control & CI",
+                "tasks": [
+                    "Advanced Git workflows",
+                    "GitHub Actions",
+                    "Jenkins pipelines",
+                    "Build automation"
+                ]
+            },
+            {
+                "title": "Month 3-4: Containers & Orchestration",
+                "tasks": [
+                    "Docker deep dive",
+                    "Kubernetes fundamentals",
+                    "Helm charts",
+                    "Container security"
+                ]
+            },
+            {
+                "title": "Month 5: Cloud Platforms",
+                "tasks": [
+                    "AWS core services (EC2, S3, RDS)",
+                    "Infrastructure as Code (Terraform)",
+                    "Cloud networking",
+                    "Cost optimization"
+                ]
+            },
+            {
+                "title": "Month 6-7: Monitoring & Security",
+                "tasks": [
+                    "Prometheus & Grafana",
+                    "ELK Stack for logging",
+                    "Security best practices",
+                    "Incident response"
+                ]
+            },
+            {
+                "title": "Month 8: Certifications & Jobs",
+                "tasks": [
+                    "AWS Solutions Architect prep",
+                    "CKA (Kubernetes) prep",
+                    "Real-world project",
+                    "Interview preparation"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "product-company-prep",
+        "title": "Product Company Interview Prep",
+        "description": "4-month intensive preparation for FAANG/MAANG interviews.",
+        "color": "#fce4ec",
+        "timeEstimate": "4 months",
+        "salaryRange": {
+            "india": "15-50 LPA",
+            "global": "$120K-$300K"
+        },
+        "weeks": [
+            {
+                "title": "Month 1: DSA Foundation",
+                "tasks": [
+                    "Master all data structures",
+                    "Time/Space complexity analysis",
+                    "50 Easy LeetCode problems",
+                    "Pattern recognition"
+                ]
+            },
+            {
+                "title": "Month 2: Advanced Algorithms",
+                "tasks": [
+                    "Dynamic Programming (30 problems)",
+                    "Graph algorithms (20 problems)",
+                    "Backtracking & recursion",
+                    "75 Medium LeetCode problems"
+                ]
+            },
+            {
+                "title": "Month 3: System Design",
+                "tasks": [
+                    "Distributed systems concepts",
+                    "Design Twitter, Uber, WhatsApp",
+                    "Database sharding & replication",
+                    "CAP theorem & trade-offs"
+                ]
+            },
+            {
+                "title": "Month 4: Interview Mode",
+                "tasks": [
+                    "20 Hard LeetCode problems",
+                    "Mock interviews (2x per week)",
+                    "Behavioral preparation",
+                    "Company research & applications"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "mobile-developer",
+        "title": "Mobile App Developer",
+        "description": "6-month path to become a cross-platform mobile developer.",
+        "color": "#e0f7fa",
+        "timeEstimate": "6 months",
+        "salaryRange": {
+            "india": "5-20 LPA",
+            "global": "$70K-$150K"
+        },
+        "weeks": [
+            {
+                "title": "Month 1: Choose Your Path",
+                "tasks": [
+                    "React Native OR Flutter basics",
+                    "Mobile UI/UX principles",
+                    "Development environment setup",
+                    "First 'Hello World' app"
+                ]
+            },
+            {
+                "title": "Month 2: Core Concepts",
+                "tasks": [
+                    "State management",
+                    "Navigation patterns",
+                    "Forms & validation",
+                    "Build 2 simple apps"
+                ]
+            },
+            {
+                "title": "Month 3: Data & APIs",
+                "tasks": [
+                    "REST API integration",
+                    "Local storage (SQLite/AsyncStorage)",
+                    "Authentication flows",
+                    "Error handling"
+                ]
+            },
+            {
+                "title": "Month 4: Native Features",
+                "tasks": [
+                    "Camera & media access",
+                    "Push notifications",
+                    "Maps & geolocation",
+                    "Device sensors"
+                ]
+            },
+            {
+                "title": "Month 5-6: Production & Publishing",
+                "tasks": [
+                    "App performance optimization",
+                    "Testing strategies",
+                    "App Store & Play Store publishing",
+                    "Build portfolio app"
+                ]
+            }
+        ]
+    },
+    {
         "id": "aiml-intern",
         "title": "AI/ML Internship Roadmap",
         "description": "A comprehensive 6-month guide to mastering AI & ML for internships.",
         "color": "#e3f2fd",
+        "timeEstimate": "6 months",
+        "salaryRange": {
+            "india": "4-15 LPA",
+            "global": "$50K-$100K"
+        },
         "weeks": [
             {
                 "title": "Month 1: Python & Math Foundation",
@@ -48,6 +428,11 @@
         "title": "Web Development Internship",
         "description": "8-week intensive path to become a junior web developer.",
         "color": "#fff3e0",
+        "timeEstimate": "2 months",
+        "salaryRange": {
+            "india": "3-8 LPA",
+            "global": "$40K-$70K"
+        },
         "weeks": [
             {
                 "title": "Weeks 1-2: Frontend Basics",
@@ -72,7 +457,7 @@
                 "tasks": [
                     "Node.js & Express Basics",
                     "REST API Concepts",
-                    "Connecting to a Database (dMongoDB/SQL)",
+                    "Connecting to a Database (MongoDB/SQL)",
                     "Authentication Basics"
                 ]
             },
@@ -82,50 +467,6 @@
                     "Build a Full Stack Application",
                     "Deploy to Vercel/Netlify",
                     "Code Review & Refactoring"
-                ]
-            }
-        ]
-    },
-    {
-        "id": "dbms-prep",
-        "title": "DBMS Exam Prep",
-        "description": "4-week study plan to ace your Database Management Systems exam.",
-        "color": "#e8f5e9",
-        "weeks": [
-            {
-                "title": "Week 1: Fundamentals & ER Models",
-                "tasks": [
-                    "Database Architecture (3-tier)",
-                    "Data Independence",
-                    "ER Diagrams & Notation",
-                    "Strong vs Weak Entities"
-                ]
-            },
-            {
-                "title": "Week 2: Relational Model & SQL",
-                "tasks": [
-                    "Relational Algebra Operations",
-                    "SQL DDL & DML Commands",
-                    "Joins & Subqueries",
-                    "Views and Indexes"
-                ]
-            },
-            {
-                "title": "Week 3: Normalization",
-                "tasks": [
-                    "Functional Dependencies",
-                    "Normal Forms (1NF, 2NF, 3NF, BCNF)",
-                    "Lossless Join Decomposition",
-                    "Dependency Preservation"
-                ]
-            },
-            {
-                "title": "Week 4: Transactions & Concurrency",
-                "tasks": [
-                    "ACID Properties",
-                    "Transaction Logs & Recovery",
-                    "Concurrency Control Protocols",
-                    "Previous Year Question Papers"
                 ]
             }
         ]

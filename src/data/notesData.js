@@ -1,3 +1,12 @@
+import operatingSystems from './subjects/operatingSystems';
+import dataStructures from './subjects/dataStructures';
+import softwareEngineering from './subjects/softwareEngineering';
+import cloudComputing from './subjects/cloudComputing';
+import cyberSecurity from './subjects/cyberSecurity';
+import generativeAI from './subjects/generativeAI';
+import machineLearning from './subjects/machineLearning';
+import discreteMath from './subjects/discreteMath';
+
 const notesData = [
     {
         "id": "dbms",
@@ -386,4 +395,17 @@ const notesData = [
     }
 ];
 
-export default notesData;
+// Combine base notes with modular subject files
+const allNotes = [
+    ...notesData,
+    operatingSystems,
+    dataStructures,
+    softwareEngineering,
+    cloudComputing,
+    cyberSecurity,
+    generativeAI,
+    machineLearning,
+    discreteMath
+];
+
+export default allNotes;

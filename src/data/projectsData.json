@@ -1,115 +1,410 @@
 [
     {
-        "id": "dbms",
-        "category": "Database Management Systems",
-        "description": "SQL and NoSQL based projects focusing on schema design and optimization.",
+        "id": "beginner",
+        "category": "Beginner Projects",
+        "description": "Perfect for students just starting their programming journey. Build foundational skills.",
+        "color": "#e8f5e9",
+        "projects": [
+            {
+                "id": "todo-app",
+                "title": "To-Do List Application",
+                "difficulty": "Easy",
+                "domain": "Web Development",
+                "techStack": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "problemStatement": "Build a simple task management app where users can add, complete, and delete tasks.",
+                "features": [
+                    "Add new tasks with title",
+                    "Mark tasks as complete",
+                    "Delete tasks",
+                    "LocalStorage persistence",
+                    "Filter: All/Active/Completed"
+                ],
+                "submissionGuidelines": "Host on GitHub Pages and submit the live link.",
+                "resumeDescription": "Built a responsive To-Do app with vanilla JavaScript implementing CRUD operations and local storage persistence."
+            },
+            {
+                "id": "calculator",
+                "title": "Scientific Calculator",
+                "difficulty": "Easy",
+                "domain": "Web Development",
+                "techStack": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "problemStatement": "Create a calculator supporting basic and scientific operations.",
+                "features": [
+                    "Basic operations (+, -, *, /)",
+                    "Scientific functions (sin, cos, tan, log)",
+                    "Keyboard input support",
+                    "History of calculations",
+                    "Dark/Light theme toggle"
+                ],
+                "submissionGuidelines": "Submit the GitHub repository with a live demo.",
+                "resumeDescription": "Developed a scientific calculator with 20+ mathematical operations and responsive UI."
+            },
+            {
+                "id": "quiz-app",
+                "title": "Interactive Quiz Application",
+                "difficulty": "Easy",
+                "domain": "Web Development",
+                "techStack": [
+                    "React",
+                    "CSS",
+                    "LocalStorage"
+                ],
+                "problemStatement": "Build a quiz app with multiple-choice questions and score tracking.",
+                "features": [
+                    "Multiple choice questions",
+                    "Timer for each question",
+                    "Score calculation",
+                    "Leaderboard using LocalStorage",
+                    "Category selection"
+                ],
+                "submissionGuidelines": "Deploy on Vercel and provide link.",
+                "resumeDescription": "Created an interactive quiz platform with timer, scoring system, and persistent leaderboard."
+            }
+        ]
+    },
+    {
+        "id": "intermediate",
+        "category": "Intermediate Projects",
+        "description": "For students with basic programming knowledge ready to build real-world applications.",
         "color": "#e3f2fd",
+        "projects": [
+            {
+                "id": "expense-tracker",
+                "title": "Personal Expense Tracker",
+                "difficulty": "Medium",
+                "domain": "Full Stack",
+                "techStack": [
+                    "React",
+                    "Node.js",
+                    "MongoDB",
+                    "Chart.js"
+                ],
+                "problemStatement": "Build a personal finance app to track income and expenses with visual analytics.",
+                "features": [
+                    "User authentication",
+                    "Add/Edit/Delete transactions",
+                    "Category-wise expense breakdown",
+                    "Monthly/Weekly charts and graphs",
+                    "Budget alerts",
+                    "Export to CSV"
+                ],
+                "submissionGuidelines": "Provide GitHub repo, live demo, and API documentation.",
+                "resumeDescription": "Built a full-stack expense tracker with JWT authentication, data visualization, and RESTful API."
+            },
+            {
+                "id": "blog-platform",
+                "title": "Blog Platform with CMS",
+                "difficulty": "Medium",
+                "domain": "Full Stack",
+                "techStack": [
+                    "Next.js",
+                    "PostgreSQL",
+                    "Prisma",
+                    "TailwindCSS"
+                ],
+                "problemStatement": "Create a blogging platform with markdown support and admin dashboard.",
+                "features": [
+                    "User registration and profiles",
+                    "Markdown editor for posts",
+                    "Categories and tags",
+                    "Comment system",
+                    "Admin dashboard for moderation",
+                    "SEO optimization"
+                ],
+                "submissionGuidelines": "Deploy on Vercel with Supabase/PlanetScale database.",
+                "resumeDescription": "Developed a CMS-powered blog platform using Next.js with SSR, markdown parsing, and admin controls."
+            },
+            {
+                "id": "chat-app",
+                "title": "Real-Time Chat Application",
+                "difficulty": "Medium",
+                "domain": "Full Stack",
+                "techStack": [
+                    "React",
+                    "Socket.io",
+                    "Node.js",
+                    "MongoDB"
+                ],
+                "problemStatement": "Build a real-time messaging app with rooms and direct messages.",
+                "features": [
+                    "User authentication",
+                    "Create/Join chat rooms",
+                    "Direct messaging",
+                    "Online status indicators",
+                    "Message history",
+                    "Typing indicators"
+                ],
+                "submissionGuidelines": "Video demo showing real-time functionality across two browsers.",
+                "resumeDescription": "Created a real-time chat system using WebSockets with room management and persistent message history."
+            }
+        ]
+    },
+    {
+        "id": "advanced",
+        "category": "Advanced Projects",
+        "description": "Complex projects that demonstrate professional-level skills for resume and portfolio.",
+        "color": "#f3e5f5",
+        "projects": [
+            {
+                "id": "ecommerce-platform",
+                "title": "Full E-Commerce Platform",
+                "difficulty": "Hard",
+                "domain": "Full Stack",
+                "techStack": [
+                    "Next.js",
+                    "Stripe",
+                    "PostgreSQL",
+                    "Redis",
+                    "Docker"
+                ],
+                "problemStatement": "Build a complete e-commerce solution with payments, inventory, and admin panel.",
+                "features": [
+                    "Product catalog with search/filter",
+                    "Shopping cart & wishlist",
+                    "Stripe payment integration",
+                    "Order tracking",
+                    "Admin dashboard (inventory, orders, users)",
+                    "Email notifications",
+                    "Review & ratings system"
+                ],
+                "submissionGuidelines": "Full documentation, test coverage report, and deployed demo.",
+                "resumeDescription": "Architected full-scale e-commerce platform with payment processing, inventory management, and microservices."
+            },
+            {
+                "id": "video-streaming",
+                "title": "Video Streaming Platform",
+                "difficulty": "Hard",
+                "domain": "Full Stack",
+                "techStack": [
+                    "React",
+                    "Node.js",
+                    "FFmpeg",
+                    "AWS S3",
+                    "HLS"
+                ],
+                "problemStatement": "Create a YouTube-like platform with video upload, transcoding, and streaming.",
+                "features": [
+                    "Video upload with progress",
+                    "Automatic transcoding (HLS)",
+                    "Adaptive bitrate streaming",
+                    "Comments and likes",
+                    "Subscription system",
+                    "Video recommendations"
+                ],
+                "submissionGuidelines": "Architecture diagram and video demonstration required.",
+                "resumeDescription": "Built scalable video streaming service with adaptive bitrate, cloud storage, and recommendation engine."
+            }
+        ]
+    },
+    {
+        "id": "ai-ml",
+        "category": "AI/ML Projects",
+        "description": "Machine Learning and AI projects from basic models to production-ready systems.",
+        "color": "#fff3e0",
+        "projects": [
+            {
+                "id": "sentiment-analyzer",
+                "title": "Social Media Sentiment Analyzer",
+                "difficulty": "Medium",
+                "domain": "NLP",
+                "techStack": [
+                    "Python",
+                    "NLTK",
+                    "Transformers",
+                    "Streamlit"
+                ],
+                "problemStatement": "Build a tool to analyze sentiment of tweets/posts about any topic.",
+                "features": [
+                    "Real-time data fetching",
+                    "Sentiment classification (Positive/Negative/Neutral)",
+                    "Trend visualization",
+                    "Word cloud generation",
+                    "Topic modeling"
+                ],
+                "submissionGuidelines": "Jupyter notebook with explanations and Streamlit app link.",
+                "resumeDescription": "Developed NLP sentiment analysis tool using transformer models with 85%+ accuracy on social media data."
+            },
+            {
+                "id": "image-classifier",
+                "title": "Custom Image Classification System",
+                "difficulty": "Medium",
+                "domain": "Computer Vision",
+                "techStack": [
+                    "Python",
+                    "TensorFlow",
+                    "Keras",
+                    "Flask"
+                ],
+                "problemStatement": "Build and deploy a custom image classifier that users can train with their own data.",
+                "features": [
+                    "Upload training images",
+                    "Transfer learning with ResNet/VGG",
+                    "Model training with progress",
+                    "Prediction API",
+                    "Accuracy metrics dashboard"
+                ],
+                "submissionGuidelines": "Model performance report and deployed API endpoint.",
+                "resumeDescription": "Created custom image classification system using transfer learning achieving 92% accuracy."
+            },
+            {
+                "id": "chatbot",
+                "title": "AI Customer Support Chatbot",
+                "difficulty": "Hard",
+                "domain": "NLP",
+                "techStack": [
+                    "Python",
+                    "LangChain",
+                    "OpenAI API",
+                    "FastAPI",
+                    "React"
+                ],
+                "problemStatement": "Build an intelligent chatbot that can answer questions about a company/product.",
+                "features": [
+                    "Document ingestion (PDF, web)",
+                    "Contextual Q&A using RAG",
+                    "Conversation memory",
+                    "Fallback to human agent",
+                    "Analytics dashboard"
+                ],
+                "submissionGuidelines": "Demo video showing multi-turn conversations.",
+                "resumeDescription": "Built RAG-powered customer support chatbot using LangChain with 90% query resolution rate."
+            }
+        ]
+    },
+    {
+        "id": "final-year",
+        "category": "Final Year Projects",
+        "description": "Comprehensive projects suitable for B.Tech/M.Tech final year submissions.",
+        "color": "#fce4ec",
+        "projects": [
+            {
+                "id": "healthcare-system",
+                "title": "Smart Healthcare Management System",
+                "difficulty": "Hard",
+                "domain": "Full Stack + ML",
+                "techStack": [
+                    "React",
+                    "Django",
+                    "PostgreSQL",
+                    "TensorFlow",
+                    "Docker"
+                ],
+                "problemStatement": "Build a comprehensive healthcare platform with appointment booking, medical records, and AI-based disease prediction.",
+                "features": [
+                    "Patient & Doctor registration",
+                    "Appointment scheduling",
+                    "Electronic Health Records (EHR)",
+                    "AI symptom checker",
+                    "Prescription management",
+                    "Video consultation integration",
+                    "Analytics dashboard"
+                ],
+                "submissionGuidelines": "Complete documentation including SRS, DFD, ER diagrams, and test reports.",
+                "resumeDescription": "Developed comprehensive healthcare platform with AI diagnostics, serving 5000+ mock users in testing."
+            },
+            {
+                "id": "smart-campus",
+                "title": "Smart Campus Management System",
+                "difficulty": "Hard",
+                "domain": "IoT + Full Stack",
+                "techStack": [
+                    "React Native",
+                    "Node.js",
+                    "MongoDB",
+                    "MQTT",
+                    "Raspberry Pi"
+                ],
+                "problemStatement": "Build an IoT-enabled campus management system with attendance, resource booking, and monitoring.",
+                "features": [
+                    "NFC/Bluetooth attendance",
+                    "Classroom/Lab booking",
+                    "Real-time occupancy tracking",
+                    "Energy monitoring",
+                    "Mobile app for students/faculty",
+                    "Admin analytics"
+                ],
+                "submissionGuidelines": "Hardware prototype demo video and software deployment.",
+                "resumeDescription": "Created IoT-based smart campus system reducing resource wastage by 30% in pilot deployment."
+            },
+            {
+                "id": "fraud-detection",
+                "title": "Credit Card Fraud Detection System",
+                "difficulty": "Hard",
+                "domain": "ML/Data Science",
+                "techStack": [
+                    "Python",
+                    "Scikit-learn",
+                    "XGBoost",
+                    "SMOTE",
+                    "Flask"
+                ],
+                "problemStatement": "Build a machine learning system to detect fraudulent credit card transactions in real-time.",
+                "features": [
+                    "Handle imbalanced dataset",
+                    "Multiple ML models comparison",
+                    "Real-time prediction API",
+                    "Explainability with SHAP",
+                    "Alert system",
+                    "Performance monitoring"
+                ],
+                "submissionGuidelines": "Jupyter notebooks, model comparison report, and deployed API.",
+                "resumeDescription": "Built fraud detection system achieving 99.5% accuracy with XGBoost and real-time inference API."
+            }
+        ]
+    },
+    {
+        "id": "dbms",
+        "category": "Database Projects",
+        "description": "SQL and NoSQL based projects focusing on schema design and optimization.",
+        "color": "#e0f7fa",
         "projects": [
             {
                 "id": "library-management",
                 "title": "University Library Management System",
                 "difficulty": "Easy",
+                "domain": "Database",
                 "techStack": [
                     "SQL",
                     "Java/Python",
                     "JDBC/ODBC"
                 ],
-                "problemStatement": "Design a system to manage books, student memberships, and borrowing records for a university library.",
+                "problemStatement": "Design a system to manage books, student memberships, and borrowing records.",
                 "features": [
                     "Admin and Student login modules",
-                    "Book search by Title, Author, or Category",
-                    "Issue and Return book functionality with fine calculation",
-                    "Dashboard for Librarians to see overdue books"
+                    "Book search by Title, Author, Category",
+                    "Issue and Return with fine calculation",
+                    "Dashboard for overdue books"
                 ],
-                "submissionGuidelines": "Submit the ER Diagram, Relational Schema, and the SQL dump file along with the source code."
+                "submissionGuidelines": "Submit ER Diagram, Relational Schema, and SQL dump.",
+                "resumeDescription": "Designed normalized database schema and implemented library management with complex queries."
             },
             {
                 "id": "e-commerce-inventory",
                 "title": "E-Commerce Inventory System",
                 "difficulty": "Medium",
+                "domain": "Database",
                 "techStack": [
                     "PostgreSQL",
                     "Node.js",
                     "Express"
                 ],
-                "problemStatement": "Create a database backend for an online store handling products, orders, customers, and payments.",
+                "problemStatement": "Create a database backend for an online store handling products, orders, and payments.",
                 "features": [
                     "Complex queries for sales reports",
-                    "Transaction management for order processing",
-                    "Inventory triggers for low stock alerts",
-                    "Stored procedures for invoice generation"
+                    "Transaction management",
+                    "Inventory triggers for low stock",
+                    "Stored procedures for invoicing"
                 ],
-                "submissionGuidelines": "Provide API documentation and a video demo of transaction handling."
-            }
-        ]
-    },
-    {
-        "id": "aiml",
-        "category": "Artificial Intelligence & ML",
-        "description": "Projects dealing with data analysis, predictive modeling, and neural networks.",
-        "color": "#f3e5f5",
-        "projects": [
-            {
-                "id": "house-price-prediction",
-                "title": "House Price Prediction",
-                "difficulty": "Easy",
-                "techStack": [
-                    "Python",
-                    "Pandas",
-                    "Scikit-Learn"
-                ],
-                "problemStatement": "Build a regression model to predict house prices based on features like area, location, and number of rooms.",
-                "features": [
-                    "Data cleaning and preprocessing",
-                    "Exploratory Data Analysis (EDA) visualization",
-                    "Linear Regression model implementation",
-                    "R-squared and RMSE evaluation"
-                ],
-                "submissionGuidelines": "Submit the Jupyter Notebook with comments explaining each step."
-            },
-            {
-                "id": "spam-classifier",
-                "title": "Email Spam Classifier",
-                "difficulty": "Medium",
-                "techStack": [
-                    "Python",
-                    "NLTK",
-                    "Naive Bayes"
-                ],
-                "problemStatement": "Develop an NLP-based text classifier to distinguish between spam and ham emails.",
-                "features": [
-                    "Text tokenization and strict preprocessing",
-                    "TF-IDF or Bag of Words vectorization",
-                    "Model comparison (Naive Bayes vs SVM)",
-                    "Web interface for testing custom messages"
-                ],
-                "submissionGuidelines": "Deploy using Streamlit and submit the live link."
-            }
-        ]
-    },
-    {
-        "id": "webdev",
-        "category": "Web Development",
-        "description": "Full-stack and frontend applications using modern web technologies.",
-        "color": "#fff3e0",
-        "projects": [
-            {
-                "id": "task-manager",
-                "title": "Collaborative Task Manager",
-                "difficulty": "Medium",
-                "techStack": [
-                    "React",
-                    "Firebase",
-                    "Tailwind CSS"
-                ],
-                "problemStatement": "Build a Trello-like Kanban board application for teams to manage tasks in real-time.",
-                "features": [
-                    "Drag and drop interface for tasks",
-                    "Real-time updates using Firestore/Socket.io",
-                    "Team member assignment",
-                    "Auth integration"
-                ],
-                "submissionGuidelines": "Host on Vercel/Netlify and provide the GitHub repository link."
+                "submissionGuidelines": "API documentation and transaction handling demo.",
+                "resumeDescription": "Built e-commerce database with ACID compliance, triggers, and complex analytical queries."
             }
         ]
     }
